@@ -1,0 +1,12 @@
+<div class="col-2"></div>
+<div class="col-8">
+  <div class="container">
+    <%= line_chart [
+      {
+        name: "Users", type: "line", data: User.group_by_day(:created_at).count
+      }, {
+        name: "Links", type: "column", data: Link.group_by_day(:created_at).count
+      }] %>
+  </div>
+</div>
+<div class="col-2"></div>
